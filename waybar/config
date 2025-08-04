@@ -19,7 +19,8 @@
     "battery",
     "pulseaudio",
     "tray",
-    "clock"
+    "clock#time",
+    "clock#date"
   ],
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -40,8 +41,12 @@
     "spacing": 10,
     "tooltip": false
   },
-  "clock": {
-    "format": "󰅐 {:%H:%M}",
+  "clock#time": {
+    "format": "󰅐 {:%I:%M %p}",
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "󰸗 {:%m/%d}",
     "tooltip": false
   },
   "network": {
@@ -59,10 +64,10 @@
     "format-icons": [
       "",
       "",
-      " "
+      ""
     ],
     "nospacing": 1,
-    "format-muted": " ",
+    "format-muted": "",
     "on-click": "pavucontrol",
     "tooltip": false
   },
@@ -73,7 +78,7 @@
     },
     "format": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "󰂄{capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
     "format-alt": "{icon} {time}",
     "format-full": "󱈑 {capacity}%",
     "format-icons": [

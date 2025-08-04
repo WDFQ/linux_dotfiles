@@ -110,3 +110,13 @@ window#waybar {
   color: #d8cab8;
   background-color: #ff2a2d;
 }
+
+#date {
+  background-image: linear-gradient(to bottom, #27232b 100%);
+  margin: 6px;
+  margin-right: 6px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #d8cab8;
+  border-style: none;
+}
