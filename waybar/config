@@ -1,27 +1,30 @@
 {
-  "layer": "bot",
-  "spacing": 0,
-  "height": 0,
+  "layer": "top",
+  "height": 32,
+  "spacing": 6,
+  "margin-top": 0,
   "margin-bottom": 0,
-  "margin-top": 15,
+  "margin-left": 0,
+  "margin-right": 0,
   "position": "top",
-  "margin-right": 500,
-  "margin-left": 500,
+
   "modules-left": [
+    "custom/applauncher",
     "hyprland/workspaces",
-    "sway/workspaces"
+    "sway/workspaces",
+    "network"
   ],
   "modules-center": [
-    "custom/applauncher"
+    "custom/media"
   ],
   "modules-right": [
-    "network",
     "battery",
     "pulseaudio",
     "tray",
     "clock#time",
     "clock#date"
   ],
+
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
@@ -33,26 +36,30 @@
     "tooltip": false
   },
   "custom/applauncher": {
-    "format": "〇",
-    "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
+    "format": "",
+    "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun",
     "tooltip": false
   },
+  "custom/media": {
+    "exec": "playerctl metadata --format '{{ title }} - {{ artist }}' || echo 'No media playing'",
+    "interval": 5
+  },
   "tray": {
-    "spacing": 10,
+    "spacing": 8,
     "tooltip": false
   },
   "clock#time": {
-    "format": "󰅐 {:%I:%M %p}",
+    "format": "{:%I:%M %p}",
     "tooltip": false
   },
   "clock#date": {
-    "format": "󰸗 {:%m/%d}",
+    "format": "{:%a %b %d}",
     "tooltip": false
   },
   "network": {
     "format-wifi": " {bandwidthDownBits}",
-    "format-ethernet": " {bandwidthDownBits}",
-    "format-disconnected": "󰤮 No Network",
+    "format-ethernet": " {bandwidthDownBits}",
+    "format-disconnected": "󰤮 No Net",
     "interval": 5,
     "tooltip": false
   },
@@ -61,12 +68,7 @@
     "max-volume": 150,
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}%",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
-    "nospacing": 1,
+    "format-icons": ["", "", ""],
     "format-muted": "",
     "on-click": "pavucontrol",
     "tooltip": false
@@ -79,12 +81,7 @@
     "format": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": "󰂄 {capacity}%",
-    "format-alt": "{icon} {time}",
     "format-full": "󱈑 {capacity}%",
-    "format-icons": [
-      "󱊡",
-      "󱊢",
-      "󱊣"
-    ]
+    "format-icons": ["󱊡", "󱊢", "󱊣"]
   }
 }
